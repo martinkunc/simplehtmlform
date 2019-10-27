@@ -2,28 +2,61 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="script.js" type="text/javascript" ></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 <body>
 
 <form id="test-form">
   
+<div class="page" data-page="1">
+
   <div>
-    <label>Field 1</label>
-    <input type="text" name="Jmeno" id='jmeno' placeholder="Field 1"/>
+    <label>Jmeno</label>
+    <input type="text" name="jmeno" id='jmeno' placeholder="Field 1"/>
   </div>
 
   <div>
-    <label>Field 2</label>
-    <input type="text" name="Vyska" id='vyska' placeholder="Field 2"/>
+    <label>Vyska</label>
+    <input type="text" name="vyska" id='vyska' placeholder="Field 2"/>
   </div>
   
   <div>
-    <label>Field 3</label>
-    <input type="text" name="Oblibena barva" id='oblibena-barva' placeholder="Field 3"/>
+    <label>Oblibena barva</label>
+    <select name="oblibena_barva" id='oblibena-barva'>
+      <option value="Cerna"></option>
+      <option value="Fialova"></option>
+    </select>
   </div>
   
   <div>
-    <button type="button" id="submit-form" onclick="submitForm()">Submit</button>
+    <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
+    <button type="button" id="submit-form" onclick="nextPage()">Dalsi stranka</button>
+  </div>
+
+</div>
+
+<div class="page" data-page="2">
+
+    <div>
+      <label>Oblibene zvire</label>
+      <select name="oblibene_zvire" id='oblibene-zvire'>
+        <option value="Krysa"></option>
+        <option value="Sova"></option>
+      </select>
+    </div>
+  
+    <div>
+        <label>Oblibena barva</label>
+        <select name="oblibena_barva" id='oblibena-barva'>
+          <option value="Cerna"></option>
+          <option value="Fialova"></option>
+        </select>
+    </div>
+    
+    <div>
+      <button type="button" id="submit-form" onclick="submitForm()">Odeslat</button>
+    </div>
+  
   </div>
 
 </form>

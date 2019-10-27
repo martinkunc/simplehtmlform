@@ -1,0 +1,7 @@
+.hiddenpage {
+  visibility: hidden;
+}
+
+.visiblepage {
+  visibility: visible;
+}
