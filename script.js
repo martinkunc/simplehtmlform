@@ -2,7 +2,7 @@
 var url = 'https://mkform.herokuapp.com/save.php';
 
 (function() {
-  init();
+  document.onload = init
 })();
 
 function submitForm() {
@@ -34,8 +34,6 @@ function init() {
   hideAll();
   var smallest = getFirst(pages)
   showPage(smallest);
-
-  document.onload = hideAll
 }
 
 function getPages() {
