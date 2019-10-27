@@ -1,7 +1,7 @@
 var $form = $('form#test-form'),
     url = 'https://script.google.com/macros/s/AKfycby6e4ELsEzaOUYuO4E5PAYib5pKDl6H12uiZjNQlwvcX_2svMuv/exec'
 
-$('#submit-form').on('click', function(e) {
+function submitForm(e) {
   e.preventDefault();
   var jqxhr = $.ajax({
     url: url,
@@ -11,4 +11,4 @@ $('#submit-form').on('click', function(e) {
   }).success(
     // do something
   );
-})
+}
