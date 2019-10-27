@@ -3,7 +3,7 @@ url = 'https://mkform.herokuapp.com/save.php'
 
 (function() {
   init();
-})()
+})();
 
 function submitForm() {
   var d = getFormData()
