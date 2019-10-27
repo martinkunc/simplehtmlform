@@ -2,7 +2,13 @@
 var url = 'https://mkform.herokuapp.com/save.php';
 
 (function() {
-  document.onload = init
+  document.forms[0].class='hiddenform'
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    init();
+});
+  //document.onload = init
+  
 })();
 
 function submitForm() {
@@ -34,6 +40,7 @@ function init() {
   hideAll();
   var smallest = getFirst(pages)
   showPage(smallest);
+  document.forms[0].class='visibleform'
 }
 
 function getPages() {

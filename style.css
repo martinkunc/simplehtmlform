@@ -5,3 +5,11 @@
 .visiblepage {
   visibility: visible;
 }
+
+.hiddenform {
+  visibility: hidden;
+}
+
+.visibleform {
+  visibility: visible;
+}
