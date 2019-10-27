@@ -7,9 +7,13 @@ function submitForm() {
     url: url,
     method: "GET",
     dataType: "json",
-    data: $form.serializeObject()
+    data: JSON.stringify({"Jmeno":getFormVal('jmeno'), "Vyska":getFormVal('vyska'), "Oblibena barva": getFormVal('oblibena-barva')})
   }).success(
     console.log("Success")
     // do something
   );
+}
+
+function getFormVal(f) {
+  return document.getElementById("test-form").elements[f]
 }
