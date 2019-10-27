@@ -8,7 +8,7 @@ function submitForm() {
     url: url,
     method: "POST",
     dataType: "json",
-    data: JSON.stringify({"Jmeno":getFormVal('jmeno'), "Vyska":getFormVal('vyska'), "Oblibena barva": getFormVal('oblibena-barva')})
+    data: {d:JSON.stringify({"Jmeno":getFormVal('jmeno'), "Vyska":getFormVal('vyska'), "Oblibena barva": getFormVal('oblibena-barva')})}
   }).success(
     console.log("Success")
     // do something
