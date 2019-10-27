@@ -6,7 +6,7 @@ function submitForm() {
   //e.preventDefault();
   var jqxhr = $.ajax({
     url: url,
-    method: "GET",
+    method: "POST",
     dataType: "json",
     data: JSON.stringify({"Jmeno":getFormVal('jmeno'), "Vyska":getFormVal('vyska'), "Oblibena barva": getFormVal('oblibena-barva')})
   }).success(
