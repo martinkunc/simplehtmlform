@@ -16,5 +16,5 @@ function submitForm() {
 }
 
 function getFormVal(f) {
-  return document.getElementById("test-form").elements[f]
+  return document.getElementById("test-form").elements[f].value
 }
