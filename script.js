@@ -35,7 +35,7 @@ function getFormData() {
 var pages;
 function init() {
   pages = getPages();
-  hideAll();
+  hideAll(pages);
   var smallest = getFirst(pages)
   showPage(smallest);
   document.forms[0].class='visibleform'
@@ -62,7 +62,7 @@ function hideAll(pgs) {
   }
 }
 
-function showPage(idx) {
+function showPage(pgs, idx) {
   for(var e in pgs) {
     if (p.idx == idx) {
       p.el.class = 'visiblepage'
