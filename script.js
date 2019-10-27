@@ -2,12 +2,10 @@
 var url = 'https://mkform.herokuapp.com/save.php';
 
 (function() {
-  document.forms[0].class='hiddenform'
   window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     init();
 });
-  //document.onload = init
   
 })();
 
