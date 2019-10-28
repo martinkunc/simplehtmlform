@@ -35,9 +35,9 @@ function getFormData() {
 var pages;
 function init() {
   pages = getPages();
-  hideAll(pages);
-  var smallest = getFirst(pages)
   
+  var smallest = getFirst(pages)
+  document.forms[0].attributes["data-pages"] = {'pages':pages, 'current':smallest}
   showPage(pages, smallest);
   var frm = document.forms[0]
   frm.style.display = 'block'
@@ -70,7 +70,8 @@ function showPage(pgs, idx) {
   for(var p in pgs) {
     if (pgs[p].idx == idx) {
       pgs[p].el.style.display = 'block'
-      return
+    } else {
+      pgs[p].el.style.display = 'none'
     }
   }
 }
@@ -84,3 +85,26 @@ function getFirst(pgs) {
   }
   return min
 }
+
+function getNextPage(pages, current) {
+  
+  var nextMin = null
+  for(var p in pages) {
+    if ( nextMin == null || (current > pages[p].idx && pages[p].idx < nextMin)  ) {
+      nextMin = pgs[p].idx
+    }
+  }
+  return nextMin
+}
+
+function nextPage() {
+  var pgsDt = document.forms[0].attributes["data-pages"]
+  var pgs = pgsDt.pages
+  var current = pgsDt.current
+  var next = getNextPage(pgsDt.pages, current)
+  if (next == null) {
+    console.log('in the end')
+  }
+  showPage(pgs, next)
+}
+
