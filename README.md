@@ -4,6 +4,10 @@ Currently its just storing the form of incoming json in data.csv file.
 
 Running on Heroku at [mkform.herokuapp.com](https://mkform.herokuapp.com/)
 
+## Screens
+<img src="docs/page1.png" /><img src="docs/page2.png" />
+<img src="docs/results.png" />
+
 ## Add / Commit / Deploy to your heroku repo
 ```
 git add -A; git commit -m "commit"; git push heroku master
