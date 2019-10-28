@@ -37,10 +37,10 @@ function init() {
   pages = getPages();
   hideAll(pages);
   var smallest = getFirst(pages)
+  
+  showPage(pages, smallest);
   var frm = document.forms[0]
   frm.style.display = 'block'
-  showPage(pages, smallest);
-  
 }
 
 function getPages() {
