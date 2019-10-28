@@ -144,7 +144,7 @@ function getPreviousPage(pgs, current) {
   
   var nextMax = null
   for(var p in pgs) {
-    if ( current > pgs[p].idx && (nextMax == null || pgs[p].idx > nextMin)) {
+    if ( current > pgs[p].idx && (nextMax == null || pgs[p].idx > nextMax)) {
       nextMax = pgs[p].idx
     }
   }
