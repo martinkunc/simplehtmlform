@@ -25,7 +25,7 @@ function submitForm() {
 
 function getFormData() {
   var frm = document.forms[0]
-  var d;
+  var d = {}
   for(var e in frm.elements) {
     d[e.name] = e.value
   }
@@ -130,7 +130,6 @@ function getNextPage(pgs, current) {
 
 function nextPage() {
   var pgsDt = document.forms[0].attributes["data-pages"]
-  var pgs = pgsDt.pages
   var current = pgsDt.current
   pgsDt.steps.push(current)
   var next = getNextPage(pgsDt.pages, current)
@@ -141,22 +140,10 @@ function nextPage() {
   showPage(next)
 }
 
-// function getPreviousPage(pgs, current) {
-  
-//   var nextMax = null
-//   for(var p in pgs) {
-//     if ( current > pgs[p].idx && (nextMax == null || pgs[p].idx > nextMax)) {
-//       nextMax = pgs[p].idx
-//     }
-//   }
-//   return nextMax
-// }
 
 function previousPage() {
   var pgsDt = document.forms[0].attributes["data-pages"]
-  var pgs = pgsDt.pages
   var steps = pgsDt.steps
-  //var next = getPreviousPage(pgsDt.pages, current)
   
   if (steps == null || steps.length == 0) {
     console.log('in the beginning')
