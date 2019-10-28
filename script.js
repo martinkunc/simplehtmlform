@@ -38,9 +38,9 @@ function init() {
   hideAll(pages);
   var smallest = getFirst(pages)
   var frm = document.forms[0]
-  frm.class = 'visibleform'
+  frm.style.display = 'block'
   showPage(pages, smallest);
-  document.forms[0].class='visibleform'
+  
 }
 
 function getPages() {
@@ -62,14 +62,14 @@ function getPages() {
 
 function hideAll(pgs) {
   for(var p in pgs) {
-    pgs[p].el.class = 'hiddenpage'
+    pgs[p].el.style.display = 'none'
   }
 }
 
 function showPage(pgs, idx) {
   for(var p in pgs) {
     if (pgs[p].idx == idx) {
-      pgs[p].el.class = 'visiblepage'
+      pgs[p].el.style.display = 'block'
       return
     }
   }
