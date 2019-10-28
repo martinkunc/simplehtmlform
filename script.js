@@ -37,7 +37,7 @@ function init() {
   pages = getPages();
   
   var smallest = getFirst(pages)
-  document.forms[0].attributes["data-pages"] = {'pages':pages, 'current':smallest}
+  document.forms[0].attributes["data-pages"] = {'pages':pages, 'current':smallest, 'steps': []}
   showPage(smallest);
   var frm = document.forms[0]
   frm.style.display = 'block'
@@ -132,6 +132,7 @@ function nextPage() {
   var pgsDt = document.forms[0].attributes["data-pages"]
   var pgs = pgsDt.pages
   var current = pgsDt.current
+  pgsDt.steps.push(current)
   var next = getNextPage(pgsDt.pages, current)
   console.log('next will be ' + next)
   if (next == null) {
@@ -140,25 +141,28 @@ function nextPage() {
   showPage(next)
 }
 
-function getPreviousPage(pgs, current) {
+// function getPreviousPage(pgs, current) {
   
-  var nextMax = null
-  for(var p in pgs) {
-    if ( current > pgs[p].idx && (nextMax == null || pgs[p].idx > nextMax)) {
-      nextMax = pgs[p].idx
-    }
-  }
-  return nextMax
-}
+//   var nextMax = null
+//   for(var p in pgs) {
+//     if ( current > pgs[p].idx && (nextMax == null || pgs[p].idx > nextMax)) {
+//       nextMax = pgs[p].idx
+//     }
+//   }
+//   return nextMax
+// }
 
 function previousPage() {
   var pgsDt = document.forms[0].attributes["data-pages"]
   var pgs = pgsDt.pages
-  var current = pgsDt.current
-  var next = getPreviousPage(pgsDt.pages, current)
-  console.log('prev will be ' + next)
-  if (next == null) {
+  var steps = pgsDt.steps
+  //var next = getPreviousPage(pgsDt.pages, current)
+  
+  if (steps == null || steps.length == 0) {
     console.log('in the beginning')
   }
-  showPage(next)
+  prev = steps.pop()
+  console.log('prev will be ' + prev)
+  
+  showPage(prev)
 }
