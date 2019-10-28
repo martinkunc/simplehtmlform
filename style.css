@@ -1,15 +1,15 @@
 .hiddenpage {
-  visibility: hidden;
+  display: none;
 }
 
 .visiblepage {
-  visibility: visible;
+  display: block;
 }
 
 body form {
-  visibility: hidden;
+  display: none;
 }
 
 .visibleform {
-  visibility: visible;
+  display: block;
 }
