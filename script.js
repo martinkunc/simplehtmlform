@@ -88,8 +88,8 @@ function getFirst(pgs) {
 
 function getChildByName(name) {
   var frm = document.forms[0]
-  for(var ei in frm.children) {
-    var e = frm.children[ei]
+  for(var ei in frm.elements) {
+    var e = frm.elements[ei]
     if (e.name == name) {
       return e
     }
