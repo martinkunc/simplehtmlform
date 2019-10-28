@@ -102,6 +102,7 @@ function nextPage() {
   var pgs = pgsDt.pages
   var current = pgsDt.current
   var next = getNextPage(pgsDt.pages, current)
+  console.log('next will be ' + next)
   if (next == null) {
     console.log('in the end')
   }
