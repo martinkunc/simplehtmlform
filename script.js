@@ -60,14 +60,14 @@ function getPages() {
 
 function hideAll(pgs) {
   for(var p in pgs) {
-    p.el.class = 'hiddenpage'
+    pgs[p].el.class = 'hiddenpage'
   }
 }
 
 function showPage(pgs, idx) {
   for(var p in pgs) {
-    if (p.idx == idx) {
-      p.el.class = 'visiblepage'
+    if (pgs[p].idx == idx) {
+      pgs[p].el.class = 'visiblepage'
       return
     }
   }
@@ -76,8 +76,8 @@ function showPage(pgs, idx) {
 function getFirst(pgs) {
   var min = null
   for(var p in pgs) {
-    if (min == null || min > p.idx) {
-      min = p.idx
+    if (min == null || min > pgs[p].idx) {
+      min = pgs[p].idx
     }
   }
   return min
