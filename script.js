@@ -38,7 +38,7 @@ function init() {
   
   var smallest = getFirst(pages)
   document.forms[0].attributes["data-pages"] = {'pages':pages, 'current':smallest}
-  showPage(pages, smallest);
+  showPage(smallest);
   var frm = document.forms[0]
   frm.style.display = 'block'
 }
@@ -66,7 +66,9 @@ function hideAll(pgs) {
   }
 }
 
-function showPage(pgs, idx) {
+function showPage(idx) {
+  var pgsDt = document.forms[0].attributes["data-pages"]
+  var pgs = pgsDt.pages
   for(var p in pgs) {
     if (pgs[p].idx == idx) {
       pgs[p].el.style.display = 'block'
@@ -74,6 +76,7 @@ function showPage(pgs, idx) {
       pgs[p].el.style.display = 'none'
     }
   }
+  pgsDt.current = idx
 }
 
 function getFirst(pgs) {
@@ -134,7 +137,7 @@ function nextPage() {
   if (next == null) {
     console.log('in the end')
   }
-  showPage(pgs, next)
+  showPage(next)
 }
 
 function getPreviousPage(pgs, current) {
@@ -157,5 +160,5 @@ function previousPage() {
   if (next == null) {
     console.log('in the beginning')
   }
-  showPage(pgs, next)
+  showPage(next)
 }
