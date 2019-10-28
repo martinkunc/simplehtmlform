@@ -37,6 +37,8 @@ function init() {
   pages = getPages();
   hideAll(pages);
   var smallest = getFirst(pages)
+  var frm = document.forms[0]
+  frm.class = 'visibleform'
   showPage(pages, smallest);
   document.forms[0].class='visibleform'
 }
