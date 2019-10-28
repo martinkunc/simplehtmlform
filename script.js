@@ -86,11 +86,11 @@ function getFirst(pgs) {
   return min
 }
 
-function getNextPage(pages, current) {
+function getNextPage(pgs, current) {
   
   var nextMin = null
-  for(var p in pages) {
-    if ( nextMin == null || (current > pages[p].idx && pages[p].idx < nextMin)  ) {
+  for(var p in pgs) {
+    if ( nextMin == null || (current > pgs[p].idx && pgs[p].idx < nextMin)  ) {
       nextMin = pgs[p].idx
     }
   }
