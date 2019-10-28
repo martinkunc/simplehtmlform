@@ -6,7 +6,7 @@
   visibility: visible;
 }
 
-#form {
+body form {
   visibility: hidden;
 }
 
