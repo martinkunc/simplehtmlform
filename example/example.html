@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="script.js" type="text/javascript" ></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+
+<form id="test-form">
+  
+<div class="page" data-page="1">
+
+  <div>
+    <label>Jmeno</label>
+    <input type="text" name="jmeno" id='jmeno' />
+  </div>
+
+  <div>
+    <label>Vyska</label>
+    <input type="text" name="vyska" id='vyska' />
+  </div>
+  
+  <div>
+      <label>Oblibene zvire</label>
+      <select name="oblibene_zvire" id='oblibene-zvire'>
+        <option value="krysa">Krysa</option>
+        <option value="sova">Sova</option>
+      </select>
+    </div>
+
+  
+  <div>
+    <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
+    <button type="button" id="submit-form" onclick="nextPage()">Dalsi stranka</button>
+  </div>
+
+</div>
+
+<div class="page" data-page="2">
+
+    <div>
+        <label>Oblibeny druh krysy</label>
+        <select name="oblibeny_druh_krysy" id='oblibeny_druh_krysy'>
+          <option value="Krysa obecna">Krysa obecna</option>
+          <option value="Potkan">Potkan</option>
+        </select>
+      </div>
+    
+    <div>
+      <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
+      <button type="button" id="submit-form" onclick="submitForm()">Odeslat</button>
+    </div>
+  
+  </div>
+
+  <div class="page" data-page="3">
+
+      <div>
+          <label>Oblibeny druh sovy</label>
+          <select name="oblibeny_druh_sovy" id='oblibeny_druh_sovy'>
+            <option value="Vyr">Vyr</option>
+            <option value="Sova palena">Sova palena</option>
+          </select>
+        </div>
+      
+      <div>
+        <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
+        <button type="button" id="submit-form" onclick="submitForm()">Odeslat</button>
+      </div>
+    
+    </div>
+</form>
+</body></html>

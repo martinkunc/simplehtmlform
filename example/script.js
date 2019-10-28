@@ -102,23 +102,24 @@ function getChildByName(name) {
 }
 
 function getNextPage(pgs, current) {
+
   if (current == 1) {
-    var choice = getChildByName("favorite_animal")
+    var choice = getChildByName("oblibene_zvire")
     if (choice == null) {
-      console.log('cannot find favorite_animal')
+      console.log('nemohu najit oblibene_zvire')
       return current
     }
-    if (choice.value == "dog") {
-      // page 2 has more detailed questions related to dog
+    if (choice.value == "krysa") {
+      // stranka 2 je pro detaily o krysach
       return 2
     }
-    if (choice.value == "cat") {
-      // page 3 needs details about cat
+    if (choice.value == "sova") {
+      // stranka 3 je pro detaily o sovach
       return 3
     }
   
   }
-  // other steps will take sequentially next number
+  
   var nextMin = null
   for(var p in pgs) {
     if ( current < pgs[p].idx && (nextMin == null || pgs[p].idx < nextMin)) {

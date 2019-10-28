@@ -1,5 +1,5 @@
 ## Simple form filler in Javascript and light PHP backend
-The main idea was to prepare very simple html form skeleton with conditional logic for steps and possibility to save backend data.
+The main idea was to prepare very simple html form skeleton with conditional logic for steps.
 Currently its just storing the form of incoming json in data.csv file.
 
 Running on Heroku at [mkform.herokuapp.com](https://mkform.herokuapp.com/)
