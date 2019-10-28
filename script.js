@@ -93,6 +93,7 @@ function getChildByName(name) {
     if (e.name == name) {
       return e
     }
+  }
   return null
 }
 
