@@ -26,7 +26,8 @@ function submitForm() {
 function getFormData() {
   var frm = document.forms[0]
   var d = {}
-  for(var e in frm.elements) {
+  for(var ei in frm.elements) {
+    var e = frm.elements[ei]
     d[e.name] = e.value
   }
   return d
