@@ -21,12 +21,13 @@
   </div>
   
   <div>
-    <label>Oblibena barva</label>
-    <select name="oblibena_barva" id='oblibena-barva'>
-      <option value="Cerna">Cerna</option>
-      <option value="Fialova">Fialova</option>
-    </select>
-  </div>
+      <label>Oblibene zvire</label>
+      <select name="oblibene_zvire" id='oblibene-zvire'>
+        <option value="krysa">Krysa</option>
+        <option value="sova">Sova</option>
+      </select>
+    </div>
+
   
   <div>
     <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
@@ -38,26 +39,35 @@
 <div class="page" data-page="2">
 
     <div>
-      <label>Oblibene zvire</label>
-      <select name="oblibene_zvire" id='oblibene-zvire'>
-        <option value="Krysa"></option>
-        <option value="Sova"></option>
-      </select>
-    </div>
-  
-    <div>
-        <label>Oblibena barva</label>
-        <select name="oblibena_barva" id='oblibena-barva'>
-          <option value="Cerna"></option>
-          <option value="Fialova"></option>
+        <label>Oblibeny druh krysy</label>
+        <select name="oblibeny_druh_krysy" id='oblibeny_druh_krysy'>
+          <option value="Krysa obecna">Krysa obecna</option>
+          <option value="Potkan">Potkan</option>
         </select>
-    </div>
+      </div>
     
     <div>
+      <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
       <button type="button" id="submit-form" onclick="submitForm()">Odeslat</button>
     </div>
   
   </div>
 
+  <div class="page" data-page="3">
+
+      <div>
+          <label>Oblibeny druh sovy</label>
+          <select name="oblibeny_druh_sovy" id='oblibeny_druh_sovy'>
+            <option value="Vyr">Vyr</option>
+            <option value="Sova palena">Sova palena</option>
+          </select>
+        </div>
+      
+      <div>
+        <button type="button" id="submit-form" onclick="previousPage()">Predchozi stranka</button>
+        <button type="button" id="submit-form" onclick="submitForm()">Odeslat</button>
+      </div>
+    
+    </div>
 </form>
 </body></html>

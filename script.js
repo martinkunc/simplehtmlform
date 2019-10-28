@@ -86,7 +86,34 @@ function getFirst(pgs) {
   return min
 }
 
+function getChildByName(name) {
+  var frm = document.forms[0]
+  for(var ei in frm.children) {
+    var e = frm.children[ei]
+    if (e.name == name) {
+      return e
+    }
+  return null
+}
+
 function getNextPage(pgs, current) {
+
+  if (current == 1) {
+    var choice = getChildByName("oblibene_zvire")
+    if (choice == null) {
+      console.log('nemohu najit oblibene_zvire')
+      return current
+    }
+    if (choice.value == "krysa") {
+      // stranka 2 je pro detaily o krysach
+      return 2
+    }
+    if (choice.value == "sova") {
+      // stranka 3 je pro detaily o sovach
+      return 3
+    }
+  
+  }
   
   var nextMin = null
   for(var p in pgs) {
@@ -109,3 +136,25 @@ function nextPage() {
   showPage(pgs, next)
 }
 
+function getPreviousPage(pgs, current) {
+  
+  var nextMax = null
+  for(var p in pgs) {
+    if ( current > pgs[p].idx && (nextMax == null || pgs[p].idx > nextMin)) {
+      nextMax = pgs[p].idx
+    }
+  }
+  return nextMax
+}
+
+function previousPage() {
+  var pgsDt = document.forms[0].attributes["data-pages"]
+  var pgs = pgsDt.pages
+  var current = pgsDt.current
+  var next = getPreviousPage(pgsDt.pages, current)
+  console.log('prev will be ' + next)
+  if (next == null) {
+    console.log('in the beginning')
+  }
+  showPage(pgs, next)
+}
