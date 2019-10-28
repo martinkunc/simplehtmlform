@@ -90,7 +90,7 @@ function getNextPage(pgs, current) {
   
   var nextMin = null
   for(var p in pgs) {
-    if ( current > pgs[p].idx && (nextMin == null || pgs[p].idx < nextMin)) {
+    if ( current < pgs[p].idx && (nextMin == null || pgs[p].idx < nextMin)) {
       nextMin = pgs[p].idx
     }
   }
