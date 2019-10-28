@@ -44,7 +44,8 @@ function init() {
 function getPages() {
   var pgs = [];
   var frm = document.forms[0]
-  for(var e in frm.children) {
+  for(var ei in frm.children) {
+    var e = frm.children[ei]
     if (e.nodeName != "DIV")
       continue;
     for (var a in e.attributes) {
