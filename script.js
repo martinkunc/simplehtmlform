@@ -48,7 +48,8 @@ function getPages() {
     var e = frm.children[ei]
     if (e.nodeName != "DIV")
       continue;
-    for (var a in e.attributes) {
+    for (var ai in e.attributes) {
+      var a = e.attributes[ai]
       if (a.name=="data-page") {
         pgs.push({ el: e, idx: a.value});
       }
